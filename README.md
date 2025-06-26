@@ -25,12 +25,6 @@ A full-stack (server-rendered) CRUD web application built using **Flask** and **
 
 ---
 
-## 📁 Folder Structure
-
-Here’s your project **folder structure** written properly in **Markdown**, just like you'd include in a `README.md` file:
-
----
-
 ### 📁 Folder Structure
 
 <details>
