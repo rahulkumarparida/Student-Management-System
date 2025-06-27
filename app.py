@@ -2,14 +2,17 @@
 import os
 import private  # This sets the environment variables
 import psycopg2
+from flask import Flask , request , redirect , render_template , url_for
 
 DB_NAME = os.environ.get('DB_NAME')
 DB_USER = os.environ.get('DB_USER')
 DB_PASSWORD = os.environ.get('DB_PASSWORD')
 DB_HOST = os.environ.get('DB_HOST')
 DB_PORT = os.environ.get('DB_PORT')
-    
-
+DATABASE_URL = os.environ.get('DATABASE_URL') 
+  
+app = Flask(__name__)
+app.secret_key = os.environ.get('SECRET_KEY')
 
 
 print("Connected successfully")

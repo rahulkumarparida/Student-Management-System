@@ -9,9 +9,6 @@ DB_PASSWORD = os.environ.get('DB_PASSWORD')
 DB_HOST = os.environ.get('DB_HOST')
 DB_PORT = os.environ.get('DB_PORT')
 
-# Example: Connecting to PostgreSQL with psycopg2
-import psycopg2
-
 conn = psycopg2.connect(
     dbname=DB_NAME,
     user=DB_USER,
