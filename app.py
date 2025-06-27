@@ -1,5 +1,6 @@
 # app.py
 import os
+import private
 import psycopg2
 from flask import Flask , request , redirect , render_template , url_for
 
