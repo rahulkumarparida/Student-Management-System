@@ -27,13 +27,13 @@ cursor = conn.cursor()
 
 cursor.execute('''CREATE TABLE IF NOT EXISTS department(id serial PRIMARY KEY,name text UNIQUE NOT NULL , fees int , duration int DEFAULT 4);''')
 print("Table Created")
-cursor.execute('''INSERT INTO  department(name , fees) VALUES ('Computer Science' , 120000) , ('Mechanical' , 110000) , ('Civil', 100000) , ('Electrical' , 115000);''')
+cursor.execute('''INSERT INTO  department(name , fees) VALUES ('Computer Science' , 120000) , ('Mechanical' , 110000) , ('Civil', 100000) , ('Electrical' , 115000) ON CONFLICT (name) DO NOTHING;''')
 print('Data added sucessfully')
 
 
 cursor.execute('''CREATE TABLE IF NOT EXISTS students (id serial PRIMARY KEY,sname VARCHAR(100),age INT,rollno VARCHAR(50),regn INT,dept_id INT REFERENCES department(id) );''')
 print("Table Created")
-cursor.execute('''INSERT INTO students (id, sname, age, rollno, regn, dept_id) VALUES(7, 'Rony Rathore', 20, 'CS-23-51', 23095, 1),(8, 'Rohit Nanda', 21, 'CS-23-52', 23096, 2),(9, 'Anusha Patra', 19, 'CS-23-53', 23097, 1),(10, 'Amit Kumar', 22, 'CS-23-54', 23098, 3); ''')
+cursor.execute('''INSERT INTO students (id, sname, age, rollno, regn, dept_id) VALUES(7, 'Rony Rathore', 20, 'CS-23-51', 23095, 1),(8, 'Rohit Nanda', 21, 'CS-23-52', 23096, 2),(9, 'Anusha Patra', 19, 'CS-23-53', 23097, 1),(10, 'Amit Kumar', 22, 'CS-23-54', 23098, 3) ON CONFLICT (id) DO NOTHING; ''')
 print('Data added sucessfully')
 
 conn.commit()
