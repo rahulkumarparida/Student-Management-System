@@ -18,7 +18,7 @@
    <div class="OPbuttons">
        <a href="{{url_for('index') }}"> <button>Return</button></a>
     <a href="{{url_for('update', student_id=data[0])}}"><button>Update</button></a>     
-    <a href="{{url_for('delete' , student_id=data[0])}}"><button>Delete</button></a>
+    <a href="{{url_for('delete' , student_id=data[0])}}"><button class="del">Delete</button></a>
    </div>
 </div>    
 {% endblock  %}

@@ -1,67 +1,177 @@
-*{
+:root {
+    --mindaro: #dcff5d;
+    --light-green: #b5e48c;
+    --light-green-2: #99d98c;
+    --emerald: #76c893;
+    --keppel: #52b69a;
+    --verdigris: #34a0a4;
+    --bondi-blue: #168aad;
+    --cerulean: #1a759f;
+    --lapis-lazuli: #1e6091;
+    --indigo-dye: #184e77;
+
+    --bg-color: #f8fff4;
+    --primary-color: var(--bondi-blue);
+    --secondary-color: var(--keppel);
+    --text-color: #1c1c1c;
+    --form-bg: var(--lapis-lazuli);
+    --btn-bg: var(--verdigris);
+    --btn-hover-bg: var(--light-green-2);
+    --btn-hover-text: black;
+    --card-bg: var(--cerulean);
+    --danger-color: #e63946;
+    --table-stripe: #f0fdf4;
+    --border-color: #d0e8dc;
+    --highlight-row: #e0f7e9;
+}
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-html,body{
-    background-color: gray;
-    color: white;
-    font-family: math;
+
+html, body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
 }
-nav{
+
+h1,  h3 {
+    color: var(--indigo-dye);
+    margin-bottom: 10px;
+}
+
+nav {
     height: 80px;
     text-align: center;
     padding-top: 20px;
-    background-color: #424242;
+    background-color: var(--indigo-dye);
     font-size: x-large;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    letter-spacing: 1px;
 }
-.HomeContainer{
+
+.HomeContainer {
     padding: 20px;
     margin-top: 60px;
-    border: 1px solid white;
+    border: 1px solid var(--border-color);
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: var(--bondi-blue);
+    color: white;
+}
+
+thead th {
+    padding: 12px;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+td, th {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--table-stripe);
+}
+
+tbody tr:hover {
+    background-color: var(--highlight-row);
+    cursor: pointer;
+}
+
+button, input[type="submit"] {
+    padding: 10px 16px;
+    border: none;
+    background-color: var(--btn-bg);
+    color: white;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin: 7px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: var(--btn-hover-bg);
+    color: var(--btn-hover-text);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transform: translateY(-1px);
+}
+
+.del {
+    background-color: var(--danger-color);
+    color: white;
+}
+
+.del:hover {
+    background-color: #ff8e8e;
+    color: black;
+}
+
+input {
+    width: 60%;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    padding: 10px;
+    margin: 12px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+input:hover, input:focus {
+    background-color: #fff;
+    border: 1.5px solid var(--bondi-blue);
+    transform: scale(1.03);
+}
+
+form {
+    min-height: 450px;
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    background-color: var(--form-bg);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-
-table,td ,th{
-    /* border: 1px solid gainsboro; */
-    padding: 5px;
-    text-align: center;
-}
-table{
-   
-    height: 50vh;
-    width: 80vw;
-}
-thead, th{
-background-color: #000000;
-}
-tr{
-    border: 1px solid white;
-}
- button , input[type="submit"]{
-    padding: 10px;
-    border: none;
-    background-color: #000000;
     color: white;
-    border-radius: 10px;
-    transition: all 0.3s;
-    margin: 7px;
-}
- button:hover , input[type="submit"]:hover{
-    background-color: white;
-    color: black;
-}
-.addNew{
-    width: 100vw;
-    padding: 20px;
-    padding-left: 150px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 6px var(--indigo-dye);
 }
 
-.UserFormContainer , .AddContainer , .addDept ,.StudentData{
-  
+.addNew {
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.UserFormContainer, .AddContainer, .addDept, .StudentData {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,55 +179,25 @@ tr{
     margin-top: 80px;
 }
 
-form{
-    height: 500px;
-    width: 550px;
-    border: 1px solid rgb(255, 255, 255);
-    background-color: #333333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color:  white;
-    border-radius: 15px;
-    box-shadow: 0px 0px 4px white;
-}
-input{
-    width: 50%;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 8px 8px 4px black;
-    padding: 8px;
-    margin: 9px;
-    opacity: 0.8;
-    transition: all 0.3s;
-}
-input:hover, input:focus, input:active{
-    scale: 1.1;
-    opacity: 1;
-    border: 2px solid black;
-}
-
-.book{
-    height: 350px;
-    width: 500px;
-    border: 1px solid rgb(20, 20, 20);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    padding-left: 30px;
-    border-radius: 20px;
-    margin-top: 20px;
+.book {
+    background-color: var(--card-bg);
+    padding: 30px;
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    width: 90%;
+    max-width: 500px;
+    color: white;
     font-family: monospace;
-    box-shadow: 0 0 10px black;
-    margin-bottom: 20px;
 }
-.book>p{
-    font-size: large;
-    padding: 10px;
 
+.book > p {
+    font-size: 1.1rem;
+    padding: 8px 0;
 }
-.OPbuttons{
+
+.OPbuttons {
     display: flex;
+    gap: 12px;
+    margin-top: 12px;
 }

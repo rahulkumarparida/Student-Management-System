@@ -33,7 +33,7 @@ css_file = "css/index.css" %} {% block content %}
         <td>{{ row[7] }}</td>
         <td><a href="{{url_for('ViewData', student_id=row[0])}}"><button>View</button></a></td>     
         <td><a href="{{url_for('update', student_id=row[0])}}"><button>Update</button></a></td>     
-        <td><a href="{{url_for('delete' , student_id=row[0])}}"><button>Delete</button></a></td>
+        <td><a href="{{url_for('delete' , student_id=row[0])}}" ><button class="del">Delete</button></a></td>
       </tr>
       {% endfor %}
     </tbody>
