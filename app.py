@@ -1,6 +1,5 @@
 # app.py
 import os
-import private  # This sets the environment variables
 import psycopg2
 from flask import Flask , request , redirect , render_template , url_for
 

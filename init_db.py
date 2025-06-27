@@ -1,7 +1,7 @@
 import psycopg2
 # app.py
 import os
-import private  # This sets the environment variables
+
 
 DB_NAME = os.environ.get('DB_NAME')
 DB_USER = os.environ.get('DB_USER')
