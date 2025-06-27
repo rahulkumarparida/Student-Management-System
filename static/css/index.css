@@ -201,3 +201,109 @@ form {
     gap: 12px;
     margin-top: 12px;
 }
+
+/*responsiveness */
+@media screen and (max-width: 1024px) {
+    .HomeContainer {
+        width: 95vw;
+        padding: 15px;
+    }
+
+    .book {
+        width: 95%;
+    }
+
+    table {
+        font-size: 0.95rem;
+    }
+
+    button, input[type="submit"] {
+        padding: 8px 12px;
+        font-size: 0.95rem;
+    }
+
+    input {
+        width: 80%;
+    }
+
+    form {
+        padding: 20px;
+        width: 90%;
+    }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+    nav {
+        font-size: large;
+        padding-top: 16px;
+    }
+
+    thead th, td {
+        padding: 10px 8px;
+        font-size: 0.85rem;
+    }
+
+    .addNew {
+        text-align: center;
+    }
+
+    .OPbuttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .StudentTable, .DeptTable {
+        overflow-x: auto;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+    nav h2 {
+        font-size: 1.2rem;
+    }
+
+    .HomeContainer {
+        margin-top: 40px;
+        padding: 10px;
+    }
+
+    table {
+        font-size: 0.8rem;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    input {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    button, input[type="submit"] {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    .addNew {
+        padding: 10px;
+    }
+
+    .book {
+        padding: 20px;
+        font-size: 0.95rem;
+    }
+
+    .OPbuttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
