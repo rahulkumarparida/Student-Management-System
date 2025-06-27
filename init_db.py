@@ -1,6 +1,6 @@
 import psycopg2
 import os
-import private
+
  
 
 DB_NAME = os.environ.get('DB_NAME')
