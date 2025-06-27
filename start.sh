@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Run init_db only once — create a marker file after it runs
+# Run init_db.py only once
 if [ ! -f ".init_done" ]; then
-  echo "Running init_db.py for the first time..."
+  echo "Running init_db.py..."
   python init_db.py
   touch .init_done
 else
-  echo "init_db.py already ran. Skipping..."
+  echo "Skipping init_db.py"
 fi
 
-# Start the web server
+# Start the Flask app with Gunicorn
 gunicorn app:app
