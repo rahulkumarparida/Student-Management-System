@@ -10,3 +10,6 @@ env/
 
 # (Optional) Ignore VSCode settings if using it
 .vscode/
+
+.init_done
+
