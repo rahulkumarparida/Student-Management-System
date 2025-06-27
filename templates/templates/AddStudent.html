@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+   Add Student
+{% endblock  %}
+{% set css_file = "css/index.css" %}
+
+{% block content %}
+<div class="AddContainer">
+    <div>
+    </div>
+    <form action="/newStudent" , method="post">
+        <h2>Add a new Student</h2>  
+        <input type="text" name="name" placeholder="Name">
+        <input type="number" name="age" placeholder="Age">
+        <input type="text" name="rollno" placeholder="rollno">
+        <input type="number" name="regn" placeholder="regn">
+        <input type="number" name="dept_id" placeholder="Department ID">
+        <input type="submit" value="Update">
+    </form>
+</div>
+
+{% endblock  %}

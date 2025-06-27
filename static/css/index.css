@@ -1,0 +1,123 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    background-color: gray;
+    color: white;
+    font-family: math;
+}
+nav{
+    height: 80px;
+    text-align: center;
+    padding-top: 20px;
+    background-color: #424242;
+    font-size: x-large;
+}
+.HomeContainer{
+    padding: 20px;
+    margin-top: 60px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+table,td ,th{
+    /* border: 1px solid gainsboro; */
+    padding: 5px;
+    text-align: center;
+}
+table{
+   
+    height: 50vh;
+    width: 80vw;
+}
+thead, th{
+background-color: #000000;
+}
+tr{
+    border: 1px solid white;
+}
+ button , input[type="submit"]{
+    padding: 10px;
+    border: none;
+    background-color: #000000;
+    color: white;
+    border-radius: 10px;
+    transition: all 0.3s;
+    margin: 7px;
+}
+ button:hover , input[type="submit"]:hover{
+    background-color: white;
+    color: black;
+}
+.addNew{
+    width: 100vw;
+    padding: 20px;
+    padding-left: 150px;
+}
+
+.UserFormContainer , .AddContainer , .addDept ,.StudentData{
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 80px;
+}
+
+form{
+    height: 500px;
+    width: 550px;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color:  white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 4px white;
+}
+input{
+    width: 50%;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 8px 8px 4px black;
+    padding: 8px;
+    margin: 9px;
+    opacity: 0.8;
+    transition: all 0.3s;
+}
+input:hover, input:focus, input:active{
+    scale: 1.1;
+    opacity: 1;
+    border: 2px solid black;
+}
+
+.book{
+    height: 350px;
+    width: 500px;
+    border: 1px solid rgb(20, 20, 20);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 30px;
+    border-radius: 20px;
+    margin-top: 20px;
+    font-family: monospace;
+    box-shadow: 0 0 10px black;
+    margin-bottom: 20px;
+}
+.book>p{
+    font-size: large;
+    padding: 10px;
+
+}
+.OPbuttons{
+    display: flex;
+}

@@ -1,0 +1,12 @@
+# Ignore secret config
+private.py
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+
+# Ignore virtual environment
+env/
+
+# (Optional) Ignore VSCode settings if using it
+.vscode/

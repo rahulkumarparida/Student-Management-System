@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+    Update User
+{% endblock  %}
+{% set css_file = "css/index.css" %}
+{% block content %}
+<div class="UserFormContainer">
+
+    <form action="{{url_for('update', student_id=data[0])}}" method="post">
+       <h2>Update {{data[1]}}'s Data</h2>
+        <input type="hidden" name="student_id", value="{{data[0]}}">
+        <input type="text" name="name" value="{{data[1]}}">
+        <input type="number" name="age" value="{{data[2]}}">
+        <input type="text" name="rollno" value="{{data[3]}}">
+        <input type="number" name="regn" value="{{data[4]}}">
+        <input type="number" name="dept_id" value="{{data[5]}}">
+        <input type="submit" value="Update">
+    </form>
+
+</div>    
+
+
+{% endblock  %}
