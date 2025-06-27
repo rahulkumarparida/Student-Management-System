@@ -93,7 +93,7 @@ def update(student_id):
         conn.close()
         return redirect(url_for('index'))    
     elif request.method == 'GET':
-        cursor.execute('''SELECT * , department.name AS Dname  FROM students JOIN department ON students.dept_id = department.id WHERE student_id = %s;''',(student_id,))
+        cursor.execute('''SELECT * , department.name AS Dname  FROM students JOIN department ON students.dept_id = department.id WHERE students.id = %s;''',(student_id,))
         data = cursor.fetchone()
         print("Updated data FNC:  ",data)
         cursor.close()
