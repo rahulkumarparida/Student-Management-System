@@ -1,10 +1,22 @@
+# app.py
+import os
+import private  # This sets the environment variables
 import psycopg2
-from flask import Flask , redirect , request , render_template , url_for
-import private as p 
-app = Flask(__name__)
+
+DB_NAME = os.environ.get('DB_NAME')
+DB_USER = os.environ.get('DB_USER')
+DB_PASSWORD = os.environ.get('DB_PASSWORD')
+DB_HOST = os.environ.get('DB_HOST')
+DB_PORT = os.environ.get('DB_PORT')
+    
+
+
+
+print("Connected successfully")
+
 
 def ConnDb():
-    conn = psycopg2.connect(dbname=p.dbname, user=p.user ,password=p.password,host=p.host,port=p.port)
+    conn = psycopg2.connect(dbname=DB_NAME,user=DB_USER,password=DB_PASSWORD,host=DB_HOST,port=DB_PORT)
     print('Connection Established')
     return conn
 

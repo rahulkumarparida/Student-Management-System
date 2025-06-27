@@ -1,8 +1,27 @@
 import psycopg2
-import private as p
+# app.py
+import os
+import private  # This sets the environment variables
 
-conn = psycopg2.connect(dbname=p.dbname, user=p.user ,password=p.password,host=p.host,port=p.port)
-print('Connection Established')
+DB_NAME = os.environ.get('DB_NAME')
+DB_USER = os.environ.get('DB_USER')
+DB_PASSWORD = os.environ.get('DB_PASSWORD')
+DB_HOST = os.environ.get('DB_HOST')
+DB_PORT = os.environ.get('DB_PORT')
+
+# Example: Connecting to PostgreSQL with psycopg2
+import psycopg2
+
+conn = psycopg2.connect(
+    dbname=DB_NAME,
+    user=DB_USER,
+    password=DB_PASSWORD,
+    host=DB_HOST,
+    port=DB_PORT
+)
+
+print("Connected successfully")
+
 
 cursor = conn.cursor()
 
