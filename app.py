@@ -87,13 +87,13 @@ def update(student_id):
         regn = request.form['regn']
         dept_id = request.form['dept_id']
 
-        cursor.execute('''UPDATE students SET sname=%s , age=%s , rollno=%s , regn=%s , dept_id=%s  WHERE student_id =%s;''',(name,age,rollno,regn,dept_id,Sid))
+        cursor.execute('''UPDATE students SET sname=%s , age=%s , rollno=%s , regn=%s , dept_id=%s  WHERE id =%s;''',(name,age,rollno,regn,dept_id,Sid))
         cursor.close()
         conn.commit()
         conn.close()
         return redirect(url_for('index'))    
     elif request.method == 'GET':
-        cursor.execute('''SELECT * , department.name AS Dname  FROM students JOIN department ON students.dept_id = department.id WHERE students.student_id = %s;''',(student_id,))
+        cursor.execute('''SELECT * , department.name AS Dname  FROM students JOIN department ON students.dept_id = department.id WHERE student_id = %s;''',(student_id,))
         data = cursor.fetchone()
         print("Updated data FNC:  ",data)
         cursor.close()
@@ -106,7 +106,7 @@ def delete(student_id):
     conn = ConnDb()
     cursor =conn.cursor()
    
-    cursor.execute('''DELETE FROM students WHERE student_id=%s''',(student_id,))
+    cursor.execute('''DELETE FROM students WHERE id=%s''',(student_id,))
         
     cursor.close()
     conn.commit()
@@ -118,7 +118,7 @@ def delete(student_id):
 def ViewData(student_id):
     conn = ConnDb()
     cursor = conn.cursor()
-    cursor.execute('''SELECT * , department.name AS Dname  FROM students JOIN department ON students.dept_id = department.id WHERE students.student_id = %s;''',(student_id,))
+    cursor.execute('''SELECT * , department.name AS Dname  FROM students JOIN department ON students.dept_id = department.id WHERE students.id = %s;''',(student_id,))
     data = cursor.fetchone()
     print('Viewing ' , data)
     cursor.close()
