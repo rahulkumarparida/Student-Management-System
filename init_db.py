@@ -1,7 +1,6 @@
 import psycopg2
 import os
 
-print("🔧 Running init_db.py on Render...")
 
 DB_NAME = os.environ.get('DB_NAME')
 DB_USER = os.environ.get('DB_USER')
@@ -17,11 +16,10 @@ conn = psycopg2.connect(
     port=DB_PORT
 )
 
-print("✅ Connected successfully to database.")
+print("Connected successfully to database.")
 
 cursor = conn.cursor()
 
-# Create department table
 cursor.execute('''
 CREATE TABLE IF NOT EXISTS department (
     id SERIAL PRIMARY KEY,
@@ -30,9 +28,8 @@ CREATE TABLE IF NOT EXISTS department (
     duration INT DEFAULT 4
 );
 ''')
-print("✅ Table 'department' created.")
 
-# Insert department data
+
 cursor.execute('''
 INSERT INTO department (name, fees)
 VALUES 
@@ -42,9 +39,8 @@ VALUES
     ('Electrical', 115000)
 ON CONFLICT (name) DO NOTHING;
 ''')
-print("✅ Sample departments added.")
+print("Sample departments added.")
 
-# Create students table
 cursor.execute('''
 CREATE TABLE IF NOT EXISTS students (
     id SERIAL PRIMARY KEY,
@@ -55,9 +51,7 @@ CREATE TABLE IF NOT EXISTS students (
     dept_id INT REFERENCES department(id)
 );
 ''')
-print("✅ Table 'students' created.")
 
-# Insert student data
 cursor.execute('''
 INSERT INTO students (id, sname, age, rollno, regn, dept_id)
 VALUES
@@ -67,9 +61,8 @@ VALUES
     (10, 'Amit Kumar', 22, 'CS-23-54', 23098, 3)
 ON CONFLICT (id) DO NOTHING;
 ''')
-print("✅ Sample students added.")
 
 conn.commit()
 cursor.close()
 conn.close()
-print("✅ init_db.py finished successfully.")
+
