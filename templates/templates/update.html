@@ -13,7 +13,14 @@
         <input type="number" name="age" value="{{data[2]}}">
         <input type="text" name="rollno" value="{{data[3]}}">
         <input type="number" name="regn" value="{{data[4]}}">
-        <input type="number" name="dept_id" value="{{data[5]}}">
+        <!-- <input type="number" name="dept_id" value="{{data[5]}}"> -->
+        <label for="dept_id" aria-required="true">Choose Department :</label>
+        <select id="dept_id" name="dept_id" required>
+          <option disabled selected>Select a department</option>
+          {% for d in data %}
+          <option value="{{data[5]}}">{{data[7]}}</option>
+          {% endfor %}
+        </select>
         <input type="submit" value="Update">
     </form>
 
