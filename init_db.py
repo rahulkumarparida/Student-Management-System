@@ -8,6 +8,8 @@ DB_PASSWORD = os.environ.get('DB_PASSWORD')
 DB_HOST = os.environ.get('DB_HOST')
 DB_PORT = os.environ.get('DB_PORT')
 
+
+
 conn = psycopg2.connect(
     dbname=DB_NAME,
     user=DB_USER,
@@ -24,8 +26,8 @@ cursor.execute('''
 CREATE TABLE IF NOT EXISTS department (
     id SERIAL PRIMARY KEY,
     name TEXT UNIQUE NOT NULL,
-    fees INT,
-    duration INT DEFAULT 4
+    fees VARCHAR(50),
+    duration VARCHAR(5) DEFAULT 4
 );
 ''')
 
@@ -33,10 +35,10 @@ CREATE TABLE IF NOT EXISTS department (
 cursor.execute('''
 INSERT INTO department (name, fees)
 VALUES 
-    ('Computer Science', 120000),
-    ('Mechanical', 110000),
-    ('Civil', 100000),
-    ('Electrical', 115000)
+    ('Computer Science', '120000'),
+    ('Mechanical', '110000'),
+    ('Civil', '100000'),
+    ('Electrical', '115000')
 ON CONFLICT (name) DO NOTHING;
 ''')
 print("Sample departments added.")
@@ -47,7 +49,7 @@ CREATE TABLE IF NOT EXISTS students (
     sname VARCHAR(100),
     age INT,
     rollno VARCHAR(50),
-    regn INT,
+    regn VARCHAR(50),
     dept_id INT REFERENCES department(id)
 );
 ''')
@@ -55,10 +57,10 @@ CREATE TABLE IF NOT EXISTS students (
 cursor.execute('''
 INSERT INTO students (id, sname, age, rollno, regn, dept_id)
 VALUES
-    (7, 'Rony Rathore', 20, 'CS-23-51', 23095, 1),
-    (8, 'Rohit Nanda', 21, 'CS-23-52', 23096, 2),
-    (9, 'Anusha Patra', 19, 'CS-23-53', 23097, 1),
-    (10, 'Amit Kumar', 22, 'CS-23-54', 23098, 3)
+    (7, 'Rony Rathore', 20, 'CS-23-51', '23095', 1),
+    (8, 'Rohit Nanda', 21, 'CS-23-52', '23096', 2),
+    (9, 'Anusha Patra', 19, 'CS-23-53', '23097', 1),
+    (10, 'Amit Kumar', 22, 'CS-23-54', '23098', 3)
 ON CONFLICT (id) DO NOTHING;
 ''')
 

@@ -1,22 +1,24 @@
-{% extends 'base.html' %}
-{% block title %}
-   Add Student
-{% endblock  %}
-{% set css_file = "css/index.css" %}
-
-{% block content %}
+{% extends 'base.html' %} {% block title %} Add Student {% endblock %} {% set
+css_file = "css/index.css" %} {% block content %}
 <div class="AddContainer">
-    <div>
-    </div>
-    <form action="/newStudent" , method="post">
-        <h2>Add a new Student</h2>  
-        <input type="text" name="name" placeholder="Name">
-        <input type="number" name="age" placeholder="Age">
-        <input type="text" name="rollno" placeholder="rollno">
-        <input type="number" name="regn" placeholder="regn">
-        <input type="number" name="dept_id" placeholder="Department ID">
-        <input type="submit" value="Add">
-    </form>
+  <!-- <div>{{ data }}</div> -->
+  <form action="/newStudent" method="post">
+    <h2>Add a new Student</h2>
+    <input type="text" name="name" placeholder="Name" required/>
+    <input type="number" name="age" placeholder="Age" required/>
+    <input type="text" name="rollno" placeholder="e.g. CS-23-XX" required/>
+    <input type="number" name="regn" placeholder="e.g. 230XXX" maxlength="10" required/>
+    <!-- <input type="number" name="dept_id" placeholder="e.g. 1"> -->
+    <label for="dept_id" aria-required="true">Choose Department :</label>
+    <select id="dept_id" name="dept_id" required>
+      <option disabled selected>Select a department</option>
+      {% for d in data %}
+      <option value="{{ d[0] }}">{{ d[1] }}</option>
+      {% endfor %}
+    </select>
+
+    <input type="submit" value="Add" />
+  </form>
 </div>
 
-{% endblock  %}
+{% endblock %}

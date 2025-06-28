@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+    Update Department
+{% endblock  %}
+{% set css_file = "css/index.css" %}
+
+{% block content %}
+<div class="updateDeptCont">
+
+
+{% for d in data %}
+    <form action="/updateDept" method="post" class="UpDeptForm">
+        <input type="hidden" name="Did" placeholder="id" value="{{ d[0]}}" >
+        <input type="text" name="name" placeholder="Name" value="{{ d[1]}}" required>
+        <input type="number" name="fees" placeholder="Fees" value="{{ d[2]}}" required>
+        <input type="text" name="duration" placeholder="Duration" value="{{d[3]}}" required>
+        <input type="submit" value="Update">    
+  
+    </form>
+{% endfor %}
+</div>    
+{% endblock  %}
